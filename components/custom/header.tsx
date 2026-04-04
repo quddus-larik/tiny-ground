@@ -1,6 +1,6 @@
 import { Button, Input, SelectTrigger, SelectValue, Tabs } from "@heroui/react";
 import { Label, ListBox, Select } from "@heroui/react";
-import { ToggleThemeButton } from "./toogle-theme";
+import { ToggleThemeButton } from "./toggle-theme";
 import { PlayIcon, SquareSplitHorizontalIcon } from "@phosphor-icons/react";
 import { useViewer } from "@/stores/tabs.state";
 
