@@ -95,3 +95,51 @@
 body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+.monaco-shell .monaco-editor .suggest-widget {
+  border-radius: 0.75rem;
+  border: 1px solid #3b2e59;
+  background: #1f1830;
+  box-shadow: 0 12px 30px rgba(14, 8, 25, 0.45);
+  overflow: hidden;
+}
+
+.monaco-shell .monaco-editor .suggest-widget .monaco-list,
+.monaco-shell .monaco-editor .suggest-widget .monaco-list-row {
+  border-radius: 0;
+}
+
+.monaco-shell .monaco-editor .suggest-widget .monaco-list-row.focused,
+.monaco-shell .monaco-editor .suggest-widget .monaco-list-row:hover {
+  background-color: #2b1b45;
+}
+
+.monaco-shell .monaco-editor .parameter-hints-widget {
+  border-radius: 0;
+  border: 1px solid #3b2e59;
+  background: #1f1830;
+  box-shadow: 0 12px 30px rgba(14, 8, 25, 0.45);
+}
+
+.monaco-shell .monaco-editor .parameter-hints-widget .parameter-hints-widget-header,
+.monaco-shell .monaco-editor .parameter-hints-widget .signature {
+  color: #e8e3f8;
+}
+
+.monaco-shell .monaco-editor .suggest-widget .details,
+.monaco-shell .monaco-editor .suggest-widget .details-separator {
+  display: none;
+}
+
+.monaco-shell {
+  overflow: visible;
+}
+
+.monaco-shell .monaco-editor,
+.monaco-shell .monaco-editor .overflow-guard {
+  border-radius: 0.75rem;
+}
+
+.monaco-shell .monaco-editor .overflow-guard {
+  overflow: hidden;
+}
