@@ -1,12 +1,17 @@
-'use client';
+"use client";
 
-import { useViewer } from '@/stores/tabs.state';
-import { Chip } from '@heroui/react';
-import { useResizable } from '@/hooks/useResizable';
+import { useViewer } from "@/stores/tabs.state";
+import { Chip } from "@heroui/react";
+import { useResizable } from "@/hooks/useResizable";
+import { CodeEditor } from "../custom/editor.minor";
+
+import { useSelectedLanguage } from "@/stores/lang.state";
 
 export function ViewerLayout() {
   const { viewerState } = useViewer();
   const { containerRef, leftWidth, handleMouseDown } = useResizable(50);
+
+  const { selectedLanguageState } = useSelectedLanguage();
 
   const isBoth = viewerState === "both";
   const isCode = viewerState === "code";
@@ -20,10 +25,10 @@ export function ViewerLayout() {
       {isBoth ? (
         <div className="flex h-full w-full items-stretch gap-1">
           <div
-            className="flex min-w-[220px] flex-col items-center justify-center rounded-xl border bg-muted p-8"
+            className="flex min-w-[220px] flex-col items-center justify-center rounded-xl border bg-muted"
             style={leftStyle}
           >
-            <h3 className="mb-2 text-lg font-medium">Code Viewer</h3>
+            <CodeEditor language={selectedLanguageState || "javascript"} />
           </div>
 
           <div
@@ -32,24 +37,25 @@ export function ViewerLayout() {
             aria-label="Resize panes"
             role="separator"
           >
-            <div className='h-8 w-1 bg-muted/80 rounded-full hover:bg-muted' />
+            <div className="h-8 w-1 bg-muted/80 rounded-full hover:bg-muted" />
           </div>
-
           <div
             className="min-w-[220px] rounded-xl bg-foreground text-background"
             style={rightStyle}
           >
             <div className="flex items-center justify-between rounded-t-xl bg-muted py-1 pl-2 pr-1 font-mono">
               <span>Output</span>
-              <Chip className="rounded-lg font-bold">javascript</Chip>
+              <Chip className="rounded-lg font-bold">
+                {selectedLanguageState || "javascript"}
+              </Chip>
             </div>
           </div>
         </div>
       ) : (
         <div className="grid h-full w-full gap-4">
           {(isCode || isBoth) && (
-            <div className="flex flex-col items-center justify-center rounded-xl border bg-muted p-8">
-              <h3 className="mb-2 text-lg font-medium">Code Viewer</h3>
+            <div className="flex flex-col items-center justify-center rounded-xl border bg-muted">
+              <CodeEditor language={selectedLanguageState || "javascript"} />
             </div>
           )}
 
@@ -57,7 +63,9 @@ export function ViewerLayout() {
             <div className="rounded-xl bg-foreground text-background">
               <div className="flex items-center justify-between rounded-t-xl bg-muted py-1 pl-2 pr-1 font-mono">
                 <span>Output</span>
-                <Chip className="rounded-lg font-bold">javascript</Chip>
+                <Chip className="rounded-lg font-bold">
+                  {selectedLanguageState || "javascript"}
+                </Chip>
               </div>
             </div>
           )}

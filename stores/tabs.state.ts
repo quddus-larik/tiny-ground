@@ -13,3 +13,4 @@ export const useViewer = create<ViewerStateInterface>((set) => ({
   viewerState: 'both',  // Initial value
   setViewerState: (payload) => set(payload),
 }));
+
