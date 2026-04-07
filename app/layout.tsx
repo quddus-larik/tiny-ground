@@ -11,14 +11,10 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  title: "One Playground",
-  description: "A playground for all types of languages.",
+  title: "Tiny Playground",
+  description: "A playground for every language that powers the web.",
 };
 
 export default function RootLayout({

@@ -1,9 +1,10 @@
 "use client";
 
-import { SunIcon, MoonIcon, GithubLogoIcon } from "@phosphor-icons/react";
+import { SunIcon, MoonIcon } from "@phosphor-icons/react";
 import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { IoLogoGithub } from "react-icons/io"
 
 export function ToggleThemeButton() {
   const [mounted, setMounted] = useState(false);
@@ -22,7 +23,7 @@ export function ToggleThemeButton() {
   return (
     <div className="flex gap-1">
       <Button variant="secondary" isIconOnly size="lg">
-        <GithubLogoIcon />
+        <IoLogoGithub className="size-6" />
       </Button>
       <Button
         variant="primary"

@@ -76,7 +76,7 @@ export function CodeLanguageSelector() {
         <Input
           aria-label="Filter languages"
           type="text"
-          placeholder="e.g rust"
+          placeholder="e.g html"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           variant="secondary"

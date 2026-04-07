@@ -6,7 +6,7 @@ export const languages = [
     defaultCode: `function App() {
   return (
     <div style={{ padding: "24px", fontFamily: "system-ui" }}>
-      <h1>Hello React</h1>
+      <h1>Hello React on TinyGround</h1>
       <p>Edit this code and click Play.</p>
     </div>
   );
@@ -23,10 +23,10 @@ root.render(<App />);`,
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One Playground</title>
+    <title>Tiny Playground</title>
   </head>
   <body>
-    <h1>Hello Playground</h1>
+    <h1>Hello TinyGround</h1>
     <p>Edit this code and click Play.</p>
   </body>
 </html>`,
