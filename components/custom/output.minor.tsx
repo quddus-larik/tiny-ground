@@ -17,12 +17,12 @@ export function OutputViewer() {
       {useIframe ? (
         <iframe
           title="Output Preview"
-          className="h-full w-full rounded-lg bg-white"
+          className="w-full rounded-lg bg-white"
           sandbox="allow-scripts"
           srcDoc={output}
         />
       ) : (
-        <pre className="whitespace-pre-wrap break-words">
+        <pre className="whitespace-pre-wrap warp-break-words">
           {output || "No output yet."}
         </pre>
       )}

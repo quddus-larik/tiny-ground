@@ -64,7 +64,6 @@ export function CodeEditor({ language = "javascript" }: CodeEditorInterface) {
           glyphMargin: false,
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 3,
-          suggestOnTrigger: false,
           quickSuggestions: false,
           wordBasedSuggestions: "off",
           inlineSuggest: { enabled: false },
