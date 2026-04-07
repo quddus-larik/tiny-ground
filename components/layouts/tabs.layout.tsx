@@ -6,6 +6,7 @@ import { useResizable } from "@/hooks/useResizable";
 import { CodeEditor } from "../custom/editor.minor";
 
 import { useSelectedLanguage } from "@/stores/lang.state";
+import { OutputViewer } from "../custom/output.minor";
 
 export function ViewerLayout() {
   const { viewerState } = useViewer();
@@ -49,6 +50,7 @@ export function ViewerLayout() {
                 {selectedLanguageState || "javascript"}
               </Chip>
             </div>
+            <OutputViewer />
           </div>
         </div>
       ) : (
@@ -67,6 +69,7 @@ export function ViewerLayout() {
                   {selectedLanguageState || "javascript"}
                 </Chip>
               </div>
+              <OutputViewer />
             </div>
           )}
         </div>

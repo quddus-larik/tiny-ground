@@ -10,7 +10,7 @@ export function TabsView() {
     <Tabs
       className="text-muted"
       selectedKey={viewerState || "both"}
-      onSelectionChange={(key) => setViewerState({ viewerState: String(key) })}
+      onSelectionChange={(key) => setViewerState(String(key) as "code" | "output" | "both")}
     >
       <Tabs.ListContainer>
         <Tabs.List aria-label="Options">
