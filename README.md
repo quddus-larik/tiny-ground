@@ -9,5 +9,6 @@ A playground for every language that powers the web includes html,react.js.
 
 ### Language Support (beta)
 
+3. Vue.js
 1. React.js
 2. HTML
