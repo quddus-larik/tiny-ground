@@ -20,7 +20,7 @@ export function Header() {
         </Button>
         <Button variant="secondary" className={"text-orange-500 cursor-default"} size="lg">
           <WarningCircleIcon />
-          beta bersion
+          beta version
         </Button>
         </div>
       <ToggleThemeButton />
