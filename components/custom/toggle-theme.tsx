@@ -1,10 +1,10 @@
 "use client";
 
 import { SunIcon, MoonIcon } from "@phosphor-icons/react";
-import { Button } from "@heroui/react";
+import { Button, Tooltip } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { IoLogoGithub } from "react-icons/io"
+import { IoLogoGithub } from "react-icons/io";
 
 export function ToggleThemeButton() {
   const [mounted, setMounted] = useState(false);
@@ -22,9 +22,15 @@ export function ToggleThemeButton() {
 
   return (
     <div className="flex gap-1">
+      <Tooltip delay={0}>
       <Button variant="secondary" isIconOnly size="lg" onClick={()=> window.open('https://github.com/quddus-larik/tiny-ground')}>
         <IoLogoGithub className="size-6" />
       </Button>
+      <Tooltip.Content showArrow>
+        <Tooltip.Arrow/>
+        <p>contribute in github</p>
+      </Tooltip.Content>
+      </Tooltip>
       <Button
         variant="primary"
         size="lg"

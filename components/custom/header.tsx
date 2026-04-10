@@ -1,6 +1,6 @@
 
 
-import { Button } from "@heroui/react";
+import { Button, Tooltip } from "@heroui/react";
 import { ToggleThemeButton } from "./toggle-theme";
 import { PlayIcon, WarningCircleIcon } from "@phosphor-icons/react";
 import { CodeLanguageSelector } from "./selector.minor";
@@ -15,9 +15,15 @@ export function Header() {
       <div className="flex gap-2 items-center">
         <CodeLanguageSelector />
         <TabsView />
+        <Tooltip>
         <Button isIconOnly variant="primary" onPress={() => handleRunCode()}>
           <PlayIcon weight="fill" />
         </Button>
+        <Tooltip.Content showArrow>
+          <Tooltip.Arrow/>
+          <p>run the code</p>
+        </Tooltip.Content>
+        </Tooltip>
         <Button variant="secondary" className={"text-orange-500 cursor-default"} size="lg">
           <WarningCircleIcon />
           beta version
