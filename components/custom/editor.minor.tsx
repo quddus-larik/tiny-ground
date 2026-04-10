@@ -42,7 +42,13 @@ interface CodeEditorInterface {
 
 export function CodeEditor({ language = "javascript" }: CodeEditorInterface) {
   const { userCode, setUserCode } = useUserCode();
-  const editorLanguage = language.toLowerCase() === "react" ? "javascript" : language;
+  const normalizedLanguage = language.toLowerCase();
+  const editorLanguage =
+    normalizedLanguage === "react"
+      ? "javascript"
+      : normalizedLanguage === "vue"
+      ? "html"
+      : normalizedLanguage;
 
   return (
     <div className="monaco-shell h-full w-full rounded-xl bg-background">
