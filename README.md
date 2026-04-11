@@ -5,7 +5,7 @@ A playground for every language that powers the web includes html,react.js.
 <img src="/public/cover.png">
 
 ## User Interface
-<img src="/snapshots.png">
+<img src="/snapshot.png">
 
 ### Language Support (beta)
 
