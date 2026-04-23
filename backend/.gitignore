@@ -1,0 +1,59 @@
+# Byte‑compiled / optimized / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+.venv.bak/
+env.bak/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and dumps
+*.log
+*.sqlite3
+*.dump
+
+# Coverage / test reports
+coverage.xml
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.pytest_cache/
+.nox/
+.coverage.*
+.cache
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Local config overrides (Django, Flask, etc., if any)
+local_settings.py
+instance/
+.scrapy
