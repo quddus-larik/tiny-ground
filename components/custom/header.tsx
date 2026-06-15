@@ -1,4 +1,4 @@
-import { Button, Input, Label, Modal, Tooltip } from "@heroui/react";
+import { Button, Input, Label, Modal, Popover, Tooltip } from "@heroui/react";
 import { ToggleThemeButton } from "./toggle-theme";
 import {
   PencilLineIcon,
@@ -12,7 +12,8 @@ import { TinyIcon } from "../assets/logo";
 import { useStdinState } from "@/stores/stdin.state";
 
 export function Header() {
-  const { hasStdin, inputRequests, setInputRequestValue, setStdin } = useStdinState();
+  const { hasStdin, inputRequests, setInputRequestValue, setStdin } =
+    useStdinState();
 
   const runWithModalInputs = async () => {
     const stdins = inputRequests.map((item) => item.input ?? "").join("\n");
@@ -45,15 +46,20 @@ export function Header() {
                   </Modal.Header>
                   <Modal.Body>
                     <div className="w-full flex flex-col gap-3 p-1">
-                      {inputRequests.map((itm,idx) => (
-                        <div key={`${itm.title}-${idx}`} className="flex flex-col gap-1">
+                      {inputRequests.map((itm, idx) => (
+                        <div
+                          key={`${itm.title}-${idx}`}
+                          className="flex flex-col gap-1"
+                        >
                           <Label htmlFor={`stdin-${idx}`}>{itm.title}</Label>
                           <Input
                             id={`stdin-${idx}`}
                             placeholder="xyz"
                             type="text"
                             value={itm.input}
-                            onChange={(e) => setInputRequestValue(idx, e.target.value)}
+                            onChange={(e) =>
+                              setInputRequestValue(idx, e.target.value)
+                            }
                           />
                         </div>
                       ))}
@@ -77,15 +83,27 @@ export function Header() {
             Run <PlayIcon weight="fill" />
           </Button>
         )}
-
-        <Button
-          variant="secondary"
-          className={"text-orange-500 cursor-default"}
-          size="lg"
-        >
-          <WarningCircleIcon />
-          beta version
-        </Button>
+        <Popover>
+          <Button
+            variant="primary"
+            className={"cursor-default bg-warning"}
+            size="lg"
+            isIconOnly
+          >
+            <WarningCircleIcon className="text-background size-5" />
+          </Button>
+          <Popover.Content className="max-w-64">
+            <Popover.Dialog>
+              <Popover.Arrow />
+              <Popover.Heading className="text-warning">
+                Warning
+              </Popover.Heading>
+              <p className="mt-2 text-sm text-muted">
+                May take longer time due to low server resources.
+              </p>
+            </Popover.Dialog>
+          </Popover.Content>
+        </Popover>
       </div>
       <ToggleThemeButton />
     </div>
