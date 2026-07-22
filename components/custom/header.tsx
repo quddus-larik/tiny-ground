@@ -1,4 +1,4 @@
-import { Button, Input, Label, Modal, Popover, Tooltip } from "@heroui/react";
+import { Button, Input, Label, Modal, Popover } from "@heroui/react";
 import { ToggleThemeButton } from "./toggle-theme";
 import {
   PencilLineIcon,
@@ -8,7 +8,6 @@ import {
 import { CodeLanguageSelector } from "./selector.minor";
 import { TabsView } from "./tabs.minor";
 import { handleRunCode } from "@/lib/handlers/codeRunner";
-import { TinyIcon } from "../assets/logo";
 import { useStdinState } from "@/stores/stdin.state";
 
 export function Header() {
@@ -23,7 +22,7 @@ export function Header() {
 
   return (
     <div className="w-full py-2 px-4 flex items-center justify-between font-mono">
-      <img src={"/logo.svg"} className="size-10" />
+      <img src={"/logo.svg"} alt={"logo"} className="size-10" />
       <div className="flex gap-2 items-center">
         <CodeLanguageSelector />
         <TabsView />
@@ -104,6 +103,7 @@ export function Header() {
             </Popover.Dialog>
           </Popover.Content>
         </Popover>
+        <Button className={"cursor-default"} variant={"tertiary"}>Tiny AI Coming Soon</Button>
       </div>
       <ToggleThemeButton />
     </div>
