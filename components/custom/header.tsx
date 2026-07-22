@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <div className="w-full py-2 px-4 flex items-center justify-between font-mono">
-      <TinyIcon className="size-10" />
+      <img src={"/logo.svg"} className="size-10" />
       <div className="flex gap-2 items-center">
         <CodeLanguageSelector />
         <TabsView />
