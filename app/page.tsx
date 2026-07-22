@@ -34,7 +34,7 @@ export default function Page() {
   return (
     <div className="w-full flex flex-col gap-0">
       <header className="w-full flex items-center justify-between p-2">
-        <img src={"/logo.svg"} className="size-10" />
+        <img src={"/logo.svg"} alt={"logo"} className="size-10" />
         <ToggleThemeButton />
       </header>
       <div className="w-full flex flex-col justify-center h-[94svh] gap-3">
