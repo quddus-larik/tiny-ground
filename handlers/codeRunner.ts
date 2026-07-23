@@ -151,11 +151,12 @@ export async function handleRunCode({
   const selectedLanguage =
     (language ?? useSelectedLanguage.getState().selectedLanguageState ?? "javascript").toLowerCase();
   const userCode = code ?? useUserCode.getState().userCode ?? "";
-  const { setOutput, setRunning } = useOutput.getState();
+  const { setOutput, setErrorOutput, setRunning } = useOutput.getState();
   const { stdin: storedStdin } = useStdinState.getState();
   const activeStdin = stdin ?? storedStdin;
 
   setOutput("");
+  setErrorOutput("");
   setRunning(true);
 
   if (HTML_LANGUAGES.has(selectedLanguage)) {
@@ -192,9 +193,15 @@ export async function handleRunCode({
       return;
     }
 
+    const execErrors = [result.stderr, result.compile_output, result.message]
+      .filter(Boolean)
+      .join("\n");
+    setErrorOutput(execErrors);
+
     setOutput(formatRunResult(result));
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
+    setErrorOutput(message);
     setOutput(
       `Execution failed. Make sure backend is running at ${"/api/run"}\n${message}`,
     );

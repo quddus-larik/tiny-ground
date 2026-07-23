@@ -7,7 +7,7 @@ import {
 } from "@phosphor-icons/react";
 import { CodeLanguageSelector } from "./selector.minor";
 import { TabsView } from "./tabs.minor";
-import { handleRunCode } from "@/lib/handlers/codeRunner";
+import { handleRunCode } from "@/handlers/codeRunner";
 import { useStdinState } from "@/stores/stdin.state";
 
 export function Header() {
@@ -103,7 +103,7 @@ export function Header() {
             </Popover.Dialog>
           </Popover.Content>
         </Popover>
-        <Button className={"cursor-default"} variant={"tertiary"}>Tiny AI Coming Soon</Button>
+        <Button variant={"secondary"} className={"ring-0 ring-accent hover:ring-2 transition-all"}>AI Debug!</Button>
       </div>
       <ToggleThemeButton />
     </div>
