@@ -1,15 +1,34 @@
-@layer theme, base, components, utilities;
+@font-face {
+  font-family: "Stack Sans Notch";
+  src: url("/StackSansNotch-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@layer theme, base, components, utilities;
 @import "tailwindcss";
 @import "@heroui/styles";
 
-/*
- * HeroUI Theme Customization
- * Add this to your global.css after importing @heroui/styles
- * Only includes base variables from variables.css
- * @see https://heroui.com/docs/react/getting-started/theming
- */
+@custom-variant dark (&:is(.dark *));
 
+@utility font-stack-sans-notch {
+  font-family: "Stack Sans Notch", sans-serif;
+}
+
+@utility font-plus-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 :root,
 .light,
 .default,
@@ -51,9 +70,6 @@
   --radius: 0.5rem;
   --field-radius: 0.75rem;
 
-  /* Font Family */
-  /* Make sure to load JetBrains Mono font in your app */
-  --font-sans: var(--font-jetbrains-mono);
 }
 
 .dark,
@@ -90,10 +106,6 @@
   --surface-tertiary-foreground: oklch(99.11% 0.0200 302.62);
   --warning: oklch(82.03% 0.1444 82.20);
   --warning-foreground: oklch(21.03% 0.0059 82.20);
-}
-
-body {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 .monaco-shell .monaco-editor .suggest-widget {

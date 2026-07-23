@@ -56,7 +56,7 @@ const BOR_RIGHT = "M 633.585 374.555 V 447.661 H 487.373 V 374.555 Z";
 
 export function TinyIcon({
                              className,
-                             emotion = "normal-blink",
+                             emotion = "sqr-l",
                              color = { left: "white", right: "white" },
                              ...props
                          }: TinyIconProps) {
