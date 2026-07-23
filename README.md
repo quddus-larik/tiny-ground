@@ -10,6 +10,49 @@ A playground for every language that powers the web includes html,react.js.
 
 ### Language Support (beta)
 
-3. Vue.js
-1. React.js
-2. HTML
+**Frontend (in-browser)**
+- React.js
+- HTML
+- Vue.js
+
+**Backend (via Judge0)**
+- Assembly
+- Bash
+- Basic
+- C
+- C++
+- C#
+- Clojure
+- COBOL
+- Common Lisp
+- D
+- Dart
+- Elixir
+- Erlang
+- F#
+- Fortran
+- Go
+- Groovy
+- Haskell
+- Java
+- JavaFX
+- JavaScript
+- Kotlin
+- Lua
+- Objective-C
+- OCaml
+- Octave
+- Pascal
+- Perl
+- PHP
+- Plain Text
+- Prolog
+- Python
+- R
+- Ruby
+- Rust
+- Scala
+- SQL
+- Swift
+- TypeScript
+- Visual Basic .NET
