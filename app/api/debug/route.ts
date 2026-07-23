@@ -11,13 +11,13 @@ interface DebugRequest {
 }
 
 const fastModel = new ChatGroq({
-  modelName: "llama-3.1-8b-versatile",
+  model: "llama-3.1-8b-instant",
   temperature: 0.1,
   apiKey: process.env.GROQ_API_KEY,
 });
 
 const deepModel = new ChatGroq({
-  modelName: "llama-3.3-70b-versatile",
+  model: "llama-3.3-70b-versatile",
   temperature: 0.2,
   apiKey: process.env.GROQ_API_KEY,
 });
